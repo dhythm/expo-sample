@@ -1,5 +1,5 @@
 ## Getting started
-### Installation
+### Set up the environment
 ```
 expo init ExpoSample
 ✔ Choose a template: › blank (TypeScript)
@@ -8,4 +8,9 @@ expo init ExpoSample
 ### Run the app
 ```
 expo start
+```
+
+### Install dependencies
+```
+expo install expo-image-picker
 ```
