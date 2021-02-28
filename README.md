@@ -13,4 +13,5 @@ expo start
 ### Install dependencies
 ```
 expo install expo-image-picker
+expo install expo-sharing
 ```
