@@ -1,15 +1,10 @@
+import { Button } from "@core/Button";
+import { styles } from "@core/styles";
 import uploadToAnonymousFilesAsync from "anonymous-files";
 import * as ImagePicker from "expo-image-picker";
 import * as Sharing from "expo-sharing";
 import React from "react";
-import {
-  Image,
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Platform, Text, View } from "react-native";
 
 export default function App() {
   const [selectedImage, setSelectedImage] = React.useState<{
@@ -59,9 +54,7 @@ export default function App() {
           source={{ uri: selectedImage.localUri }}
           style={styles.thumbnail}
         />
-        <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Share this photo</Text>
-        </TouchableOpacity>
+        <Button onPress={openShareDialogAsync} text="Share this photo" />
       </View>
     );
   }
@@ -77,42 +70,7 @@ export default function App() {
         below!
       </Text>
 
-      <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-        <Text style={styles.buttonText}>Pick a photo</Text>
-      </TouchableOpacity>
+      <Button onPress={openImagePickerAsync} text="Pick a photo" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  logo: {
-    width: 305,
-    height: 159,
-    marginBottom: 10,
-  },
-  instructions: {
-    color: "#888",
-    fontSize: 18,
-    marginHorizontal: 15,
-  },
-  button: {
-    backgroundColor: "blue",
-    padding: 20,
-    borderRadius: 5,
-  },
-  buttonText: {
-    fontSize: 20,
-    color: "#fff",
-  },
-  thumbnail: {
-    width: 300,
-    height: 300,
-    resizeMode: "contain",
-  },
-});
