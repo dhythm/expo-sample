@@ -14,4 +14,5 @@ expo start
 ```
 expo install expo-image-picker
 expo install expo-sharing
+expo install anonymous-files
 ```
